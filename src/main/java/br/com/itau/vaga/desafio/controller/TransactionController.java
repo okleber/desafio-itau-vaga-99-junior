@@ -25,7 +25,7 @@ public class TransactionController {
         this.transactionDto=new ArrayList<>();
     }
 
-    @PostMapping("/transacao")
+    @PostMapping("/transaction")
     public ResponseEntity<String> postTransaction(@RequestBody TransactionDto transactionDto){
 
         Optional<String> status=TransactionService.validatePostTransaction(transactionDto);
@@ -38,7 +38,7 @@ public class TransactionController {
         return new ResponseEntity<>(HttpStatus.UNPROCESSABLE_ENTITY);
     }
 
-    @DeleteMapping("/transacao")
+    @DeleteMapping("/transaction")
     public ResponseEntity<String> deleteTransaction() {
         this.transactionDto.clear();
         logger.info("Todas transacoes deletadas");
@@ -50,4 +50,6 @@ public class TransactionController {
         logger.info("Mensagem nao legivel");
         return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
     }
+
+
 }

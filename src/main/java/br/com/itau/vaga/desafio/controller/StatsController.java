@@ -19,7 +19,7 @@ public class StatsController {
     @Autowired
     TransactionController transactionController;
 
-    @GetMapping("/estatistica")
+    @GetMapping("/statistics")
     public ResponseEntity<String> getStats(){
         DoubleSummaryStatistics stats;
         stats = StatsService.getStats(transactionController.getTransactionDto());
